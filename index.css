@@ -1,0 +1,656 @@
+html
+{
+  scroll-behavior: smooth;
+}
+:root
+{
+  --dark_blue: #001A30;
+  --blue_var: #94DBD8;
+  --orange_var: #EFA974;
+  --blue: #63CCC8;
+  --orange: #F89766;
+  --yellow: #FFEEE0;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark_grey: #868686;
+  --light_grey: #C0C0C0;
+  --bgl_grey: #F8F9FA;
+  --bgm_grey: #F6F6F6;
+  --bgd_grey: #EAEAEA;
+}
+
+@font-face
+{
+  font-family: 'Comfortaa';
+  src: url('resources/fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Avenir Next';
+  src: url('resources/fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Avenir Next';
+  src: url('resources/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Avenir Next';
+  src: url('resources/fonts/AvenirNextLTPro-It.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-BoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+*,
+*:before,
+*:after
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ------setting up the body------ */
+body
+{
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--dark_blue);
+  background-color: var(--bgd_grey);
+  font-family: Comfortaa;
+  display: grid;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------navigation bar------ */
+#navigation
+{
+  font-family: Ubuntu;
+  padding: 0.5rem 1rem;
+  height: fit-content;
+  background-color: var(--dark_blue)!important;
+}
+
+#navigation ul { margin: 0px; }
+
+#dropdown
+{
+  background-color: var(--dark_blue);
+  color: var(--white);
+}
+
+#dropdown_item { color: rgba(255,255,255,.55); }
+
+#dropdown_item:hover
+{
+  color: rgba(255,255,255,.75);
+  background-color: transparent;
+}
+
+#icon_nav { opacity: .55; }
+
+#icon_nav:hover { opacity: .75; }
+
+.icons { display: inline-block; }
+.linkedin { display: inline-block; transform: translateY(-8%); }
+.dribble { display: inline-block; transform: translateY(-6%); }
+.redbubble { display: inline-block; transform: translateY(-6%); }
+
+@media (max-width: 992px)   /* adjust column # on smaller screen */
+{
+  .linkedin
+  {
+    width: fit-content;
+    transform: translateY(0%);
+    margin-right: 20px;
+  }
+  .dribble
+  {
+    width: fit-content;
+    transform: translateY(0%);
+    margin-right: 20px;
+  }
+  .redbubble
+  {
+    width: fit-content;
+    transform: translateY(0%);
+    margin-right: 20px;
+  }
+}
+
+#burger {border: none;}
+
+/* erase border on click from burger */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ------landing page header------ */
+#home
+{
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: block;
+  height: 100%;
+  top: 0px;
+  right: 0;
+  color: var(--white);
+}
+
+#home .container
+{
+  transition: 0.8s all cubic-bezier(0.61,0.21,0.49,0.99);
+  display: flex;
+  min-height: 600px;
+  height: auto;
+  padding-top: 220px;
+  padding-bottom: 220px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px)   /* adjust column # on smaller screen */
+{
+  #home .container
+  {
+    min-height: 450px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+#welcome_title
+{
+  font-family: Ubuntu;
+  font-weight: 500;
+  font-size: 130px;
+  line-height: 90%;
+}
+
+@media (max-width: 768px)   /* adjust column # on smaller screen */
+{
+  #welcome_title
+  {
+    font-size: 50px;
+    line-height: 110%;
+  }
+}
+
+/* ------project links------ */
+#professional_projects
+{
+  border-radius: 0 0 0 25px;
+  background-color: var(--blue_var);
+  transition: all 0.5s;
+}
+
+#personal_projects
+{
+  border-radius: 0 0 25px 0;
+  background-color: var(--orange_var);
+  transition: all 0.5s;
+}
+
+@media (max-width: 992px)   /* adjust column # on medium screen */
+{
+  #professional_projects { border-radius: 0 0 0 0; }
+  #personal_projects { border-radius: 0 0 25px 25px; }
+}
+
+#professional_projects:hover
+{
+  background-color: var(--blue);
+  transition: all 0.5s;
+}
+
+#personal_projects:hover
+{
+  background-color: var(--orange);
+  transition: all 0.5s;
+}
+
+.proj_links    /* make links dark blue and undecorated */
+{
+  color: var(--dark_blue);
+  text-decoration: none;
+  position: relative;
+}
+
+.proj_links:hover
+{
+  color: var(--dark_blue);    /* keep links dark blue on hover */
+  cursor: pointer;
+}
+
+.proj_links::after    /* underline animation when not hovering */
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: -2px;
+  background-color: var(--dark_blue);
+  color: transparent;
+  width: 0%;
+  content: '';
+  height: 1.5px;
+  transition: all 0.5s;
+}
+
+.proj_links:hover::after /* underline animation when hovering */
+{
+  width: 100%;
+}
+
+/* ------about me------ */
+#about { background-color: var(--white); }
+
+/* ------skills------ */
+#skills { background-color: var(--bgl_grey); }
+
+/* ------back to top------ */
+#back_to_top
+{
+  overflow-x: hidden;
+  background-color: inherit;
+}
+
+.btt:hover
+{
+  color: var(--blue);
+  cursor: pointer;
+}
+
+/* ------generic text formatting------ */
+.title
+{
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+
+.subtitle
+{
+  font-family: Ubuntu;
+  font-weight: 400;
+}
+
+.description { font-size: 0.9rem; }
+
+/* ------generic backgrounds------ */
+.white-bg { background-color: var(--white); }
+
+/* ------personal projects - gallery formatting------ */
+#pers_card   /* modification of original bootstrap class */
+{
+  display: inline-block;
+  border-radius: 0.5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#images-wrapper
+{
+  /* line-height: 0; */
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  column-count: 4;
+  column-gap: 10px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.img-wrapper-card
+{
+  width: 100% !important;
+  height: auto !important;
+}
+
+.img-wrapper-card p { font-size: 12px; }
+
+@media (max-width: 992px)   /* adjust column # on medium screen */
+{
+  #images-wrapper
+  {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
+  }
+}
+
+@media (max-width: 768px)   /* adjust column # on smaller screen */
+{
+  #images-wrapper
+  {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+    -webkit-column-gap: 5px;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+/* ------professional projects - gallery formatting------ */
+#profess_card
+{
+  border: none;
+  border-radius: 0 0 0 0;
+}
+
+#pro_pic { border-radius: 0 0 0 0; }
+
+@media (min-width: 992px)   /* adjust column # on medium-large screens */
+{
+  #profess_card { flex-direction: row; }
+  #pro_pic { width: 50%; }
+  #pro_text { width: 50%; }
+}
+
+#button
+{
+  font-family: Ubuntu;
+  color: var(--white);
+  background-color: var(--dark_blue);
+  border: none;
+}
+
+#button:hover
+{
+  background-color: var(--blue);
+}
+
+.pro_title
+{
+  font-family: Ubuntu;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 110%;
+}
+
+.pro_intro
+{
+  font-size: 14px;
+  line-height: 150%;
+  display: inline-block;
+
+}
+
+.pro_description
+{
+  font-size: 14px;
+  line-height: 150%;
+  display: flex;
+  text-align: center;
+
+}
+
+@media (max-width: 768px)   /* adjust column # on smaller screen */
+{
+  .pro_title
+  {
+    font-size: 24px;
+    line-height: 125%;
+  }
+  .pro_description
+  {
+    font-size: 12px;
+  }
+
+}
+
+/* ------professional projects - samsung------ */
+#pro_img
+{
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 2px 2px 10px var(--dark_grey);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------landing section------ */
+#landing_page_header
+{
+  margin: 0px;
+}
+.home_header
+{
+  width: auto;
+  height: 100vh;
+  max-height: 600px;
+  background-image: url("resources/images/home/DSC_3766_2.png");
+  background-size: cover;
+  color: var(--white);
+}
+
+.home_header_text
+{
+  float: left;
+  text-align: center;
+  padding: 162px 175px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.home_header_title
+{
+  font-family: Avenir Next;
+  font-weight: bold;
+  font-size: 160px;
+}
+
+.home_header_subtitle
+{
+  font-family: Comfortaa;
+  font-weight: lighter;
+  font-size: 25px;
+  box-sizing: content-box;
+  display: flex;
+  height: 30px;
+}
+
+/* ------landing page word rotation animation------ */
+.words
+{
+  overflow: hidden;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* span
+{
+  display: block;
+  height: 100%;
+  animation: spin_words 6s infinite;
+} */
+
+@keyframes spin_words
+{
+  10% {transform: translate(0, -103%);}
+  25% {transform: translate(0, -100%);}
+  35% {transform: translate(0, -203%);}
+  50% {transform: translate(0, -200%);}
+  60% {transform: translate(0, -303%);}
+  75% {transform: translate(0, -300%);}
+  85% {transform: translate(0, -403%);}
+  100% {transform: translate(0, -400%);}
+}
+
+/* ------skills------ */
+.skills_section
+{
+  padding: 8vh 8vw;
+}
+
+.skills_title
+{
+  font-family: Avenir Next;
+  font-weight: normal;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.skills p
+{
+  font-family: Avenir Next;
+  font-weight: normal;
+  font-size: 25px;
+  color: var(--black);
+  margin: 0px;
+}
+
+.skills
+{
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--dark_grey);
+  margin: 0px;
+  display: flex;
+}
+
+#skill_01
+{
+  padding: 20px 0vw;
+  margin-right: 8vw;
+  width: 22vw;
+}
+
+#skill_02
+{
+  padding: 20px 0vw;
+  margin-right: 8vw;
+  width: 22vw;
+}
+
+#skill_03
+{
+  padding: 20px 0vw;
+  margin-right: 8vw;
+  width: 22vw;
+}
+
+.about_stripes
+{
+  background-image: url("resources/images/home/about_stripes.png");
+}
+
+.about_me_section
+{
+  padding: 8vh 8vw;
+  background-color: var(--white);
+}
+
+.about_title
+{
+  font-family: Avenir Next;
+  font-weight: normal;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.about
+{
+
+}
+
+
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
